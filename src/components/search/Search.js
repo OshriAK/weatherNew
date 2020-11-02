@@ -8,7 +8,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './Search.css';
 
-const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
+// const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
+const apiKey = "AMv6BgPJIlzY04EFxZa2Mlmh24RWFHU8";
 
 const SearchAutoComplete = props => {
   const [open, setOpen] = React.useState(false);
@@ -44,7 +45,6 @@ const SearchAutoComplete = props => {
   }, [open]);
 
   const onInputChangeHandler = async (event, value) => {
-    console.log('valueeeeee:', value)
     if(!value) {
       return;
     }
@@ -59,7 +59,6 @@ const SearchAutoComplete = props => {
     if(!name) {
         return;
     }
-    console.log('before getttttt request the value we send is:', name)
     props.getCurrentWeather(name);
     props.favState.isCurrentCityFavorite = false
   }
