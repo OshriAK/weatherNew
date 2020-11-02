@@ -8,8 +8,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './Search.css';
 
-// const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
-const apiKey = "AMv6BgPJIlzY04EFxZa2Mlmh24RWFHU8";
+const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
+// const apiKey = "AMv6BgPJIlzY04EFxZa2Mlmh24RWFHU8";
 
 const SearchAutoComplete = props => {
   const [open, setOpen] = React.useState(false);
