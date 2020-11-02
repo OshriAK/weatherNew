@@ -1,0 +1,24 @@
+.search {
+    margin: 5rem;
+}
+
+.container {
+    display: flex;
+    border: 3.5px solid white;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.5);
+}
+
+.container__input {
+    background-color: rgb(247, 234, 121);
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2rem;
+    border: none;
+}
+
+.container__icon {
+    background-color: rgb(209, 117, 221);
+    padding: 8px;
+    border: 1.5px solid black;
+    cursor: pointer;
+}

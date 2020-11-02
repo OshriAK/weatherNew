@@ -1,0 +1,36 @@
+.dayCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 18rem;
+    width: 12rem;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.8);
+    background-color: rgb(133, 216, 231);
+}
+
+.dayCard__name {
+    margin: .5rem;
+    font-size: 2.6rem;
+}
+
+.dayCard__icon {
+    width: 12rem;
+    margin: 1rem;
+}
+
+.dayCard__temp {
+    font-size: 1.6rem;
+    color: rgb(64, 100, 218);
+    font-weight: 600;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1215px) {
+    .dayCard {
+        margin: 1rem;
+    }
+}

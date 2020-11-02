@@ -1,0 +1,36 @@
+.favorite-title {
+    font-size: 5.5rem;
+    margin: 4rem 0;
+    color: white;
+    border-bottom: 5.5px solid white;
+}
+
+.favorite-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.favorite-container__empty {
+    font-size: 4rem;
+    color: rgb(84, 153, 185);
+    margin: auto;
+    margin-top: 16rem;
+}
+
+@media (max-width: 768px) {
+    .favorite-title {
+        font-size: 4rem;
+        margin: 3rem;
+        border-bottom: 4px solid white;
+    }
+
+    .favorite-container {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .favorite-container__empty {
+        font-size: 1.6rem;
+    }
+}

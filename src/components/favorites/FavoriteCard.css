@@ -1,0 +1,89 @@
+.favoriteCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 26rem;
+    width: 18rem;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 40px;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.8);
+    background-color: rgb(133, 216, 231);
+}
+
+.favoriteCard__cityName {
+    margin-top: 1.5rem;
+    font-size: 2.8rem;
+    position: absolute;
+    border-bottom: 3px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+.favoriteCard__cityName:hover {
+    background-color: rgb(247, 236, 236);
+    border-bottom: none;
+    padding: 4px;
+    font-weight: 700;
+    color: purple;
+    border-radius: 15px;
+}
+
+.favoriteCard__cityIcon {
+    width: 11rem;
+    margin-top: 8rem;
+}
+
+.favoriteCard__cityTemp {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.favoriteCard-actions {
+    border-radius: 50%;
+    background-color: red;
+    padding: 1.2rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    border: 1px solid white;
+}
+
+.favoriteCard-actions:hover {
+    background-color: rgb(238, 54, 54);
+}
+
+.favoriteCard-actions__delete {
+    color: white;    
+}
+
+@media (max-width: 768px) {
+    .favoriteCard {
+        height: 22rem;
+        width: 15rem;
+        border: 1px solid black;
+        border-radius: 12px;
+        margin: 14px 0;
+    }
+
+    .favoriteCard__cityName {
+        margin-top: 1rem;
+        font-size: 2.5rem;
+        border-bottom: 2.5px solid black;
+    }
+
+    .favoriteCard__cityIcon {
+        width: 10rem;
+        margin-top: 6rem;
+    }
+
+    .favoriteCard__cityTemp {
+        margin-top: .5rem;
+        font-size: 2.2rem;
+    }
+
+    .favoriteCard-actions {
+        padding: 1rem;
+        margin-top: 1.4rem;
+    }
+}
