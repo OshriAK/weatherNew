@@ -6,8 +6,8 @@
 .navbar-header__home:hover {
     color: black;
     background-color: white;
-    border-radius: 1.5rem;
-    padding: .6rem;
+    border-radius: 14px;
+    padding: 1rem;
 }
 
 .navbar-header__favorites {
@@ -18,8 +18,8 @@
 .navbar-header__favorites:hover {
     color: black;
     background-color: white;
-    border-radius: 1.5rem;
-    padding: .6rem;
+    border-radius: 14px;
+    padding: 1rem;
 }
 
 .navbar-right-side {

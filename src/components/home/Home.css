@@ -1,10 +1,10 @@
 .home {
   margin: 1.5rem auto;
-  background-color: rgb(224, 203, 145);
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.5);
+  background-color: rgb(211, 199, 128);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.4);
   height: 70vh;
   width: 70vw;
-  border: 0.2rem solid black;
+  border: 3px solid black;
   border-radius: 15px;
 }
 

@@ -1,8 +1,7 @@
 import * as homeActionTypes from './homeTypes';
 import axios from 'axios'
 
-const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
-// const apiKey = "AMv6BgPJIlzY04EFxZa2Mlmh24RWFHU8";
+import { apiKey } from '../../apiKey';
 
 export const autoComplete = () => {
     return {

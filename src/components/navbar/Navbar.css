@@ -6,13 +6,13 @@
 }
 
 .navbar-header {
-    background-color: rgb(75, 156, 209);
+    background-color: rgb(71, 126, 163);
     height: 3rem;
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem;
     font-size: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);

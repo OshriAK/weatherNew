@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getCurrentWeather } from '../../redux/home/homeActions';
+import { apiKey } from '../../apiKey';
 
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -8,20 +9,33 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './Search.css';
 
-const apiKey = "UMCLRc9lAWet2ThAU6qZ2WxDvO00iMBC";
-// const apiKey = "AMv6BgPJIlzY04EFxZa2Mlmh24RWFHU8";
+
+const debounce = (func, wait) => {
+  let timeout;
+
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
 
 const SearchAutoComplete = props => {
-  const [open, setOpen] = React.useState(false);
-  const [options, setOptions] = React.useState([]);
-  const [query, setQuery] = React.useState('');
+  const [open, setOpen] = useState(false);
+  const [options, setOptions] = useState([]);
+  const [query, setQuery] = useState('');
   const loading = open && options.length === 0;
 
-  React.useEffect(() => {
+  useEffect(() => {
     let active = true;
     if (!loading) {
       return undefined;
     }
+
     if (query) {
       (async () => {
         const response = await fetch('http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=' + apiKey + '&q=' + query);
@@ -37,30 +51,30 @@ const SearchAutoComplete = props => {
     };
   }, [loading, query]);
 
-  
-  React.useEffect(() => {
+
+  useEffect(() => {
     if (!open) {
       setOptions([]);
     }
   }, [open]);
 
-  const onInputChangeHandler = async (event, value) => {
+  var returnedFunction = debounce(async (event, value) => {
     if(!value) {
       return;
     }
+    
     setQuery(value);
     const response = await fetch('http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=' + apiKey + '&q=' + value);
     const cities = await response.json();
     
     setOptions(cities.map(city => ({name: city.LocalizedName})))
-  }
+  }, 500);
   
-  const onChangeHandler = (event, {name}) => {
-    if(!name) {
-        return;
+  const onChangeHandler = (event, value) => {
+    if(value) {
+      props.getCurrentWeather(value.name);
+      props.favState.isCurrentCityFavorite = false
     }
-    props.getCurrentWeather(name);
-    props.favState.isCurrentCityFavorite = false
   }
 
   return (
@@ -80,7 +94,7 @@ const SearchAutoComplete = props => {
       options={options}
       loading={loading}
       size='medium'
-      onInputChange={onInputChangeHandler}
+      onInputChange={returnedFunction}
       onChange={onChangeHandler}
       
       renderInput={(params) => (
